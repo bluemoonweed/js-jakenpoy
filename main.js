@@ -10,4 +10,15 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+    const choice = prompt("Please enter rock, paper, or scissors:").toLowerCase();
+    if (choice === 'rock' || choice === 'paper' || choice === 'scissors') {
+      return choice;
+    } else {
+      console.log("Invalid choice. Please enter rock, paper, or scissors.");
+      return getHumanChoice();
+    }
+  }
+  
 console.log(getComputerChoice());
+console.log(getHumanChoice());
