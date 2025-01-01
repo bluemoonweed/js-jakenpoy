@@ -24,24 +24,23 @@ function getHumanChoice() {
   }
 
 function playRound(humanChoice, computerChoice) {
-  humanChoice = humanChoice.toLowerCase();
-  if (humanChoice === computerChoice) {
-    console.log(`It's a tie! Both chose ${humanChoice}`);
-  } else if (
-    (humanChoice === 'rock' && computerChoice === 'scissors') ||
-    (humanChoice === 'paper' && computerChoice === 'rock') ||
-    (humanChoice === 'scissors' && computerChoice === 'paper')
-  ) {
-    humanScore++;
-    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-  } else {
-    computerScore++;
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-  }
-  console.log(`Scores: Human - ${humanScore}, Computer - ${computerScore}`);
+    humanChoice = humanChoice.toLowerCase();
+    if (humanChoice === computerChoice) {
+      console.log(`It's a tie! Both chose ${humanChoice}`);
+    } else if (
+      (humanChoice === 'rock' && computerChoice === 'scissors') ||
+      (humanChoice === 'paper' && computerChoice === 'rock') ||
+      (humanChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+      humanScore++;
+      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    } else {
+      computerScore++;
+      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    }
+    console.log(`Scores: Human - ${humanScore}, Computer - ${computerScore}`);
 }
-  
-console.log(getComputerChoice());
-console.log(getHumanChoice());
 
-playRound(humanScore, computerScore);
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
+  playRound(humanChoice, computerChoice);
